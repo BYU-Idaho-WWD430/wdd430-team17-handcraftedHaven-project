@@ -1,3 +1,5 @@
+import { Decimal } from "@prisma/client/runtime/library";
+
 export type Users = {
   id: string;
   firstname: string;
@@ -30,13 +32,17 @@ export type ProductWithSeller = {
   product_id: string;
   name: string;
   description: string;
-  price: number;
+  price: Decimal;
   image: string;
-  category?: string;
+  category: string | null;
   user_id: string;
-  seller_category: string;
-  seller_firstname: string;
-  seller_lastname: string;
+  seller: {
+    firstname: string;
+    lastname: string;
+    profile: {
+      category: string;
+    } | null;
+  };
 };
 
 export type Review = {

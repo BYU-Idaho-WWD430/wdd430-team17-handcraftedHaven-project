@@ -4,8 +4,8 @@ import { z } from "zod";
 //import { signIn } from "../../../auth"; // Asegúrate que la ruta a auth.ts sea correcta
 import { AuthError } from "next-auth";
 import bcrypt from "bcryptjs";
-import prisma from "./prisma";
-import { ProductWithSeller, SellerProfile, Review } from "@/app/lib/definitions";
+import prisma from "./lib/prisma";
+import { ProductWithSeller, SellerProfile, Review } from "./lib/definitions";
 import { revalidatePath } from "next/cache";
 
 /* -------------------- REGISTRATION -------------------- */
@@ -77,8 +77,8 @@ const mapProductToProductWithSeller = (
   p: any
 ): ProductWithSeller & { seller: { firstname: string; lastname: string } } => ({
   ...p, // Mantiene todos los campos del producto (product_id, name, etc.)
-  seller: p.seller, // Mantiene el objeto seller anidado, que es lo que espera ProductCard
-  category: p.category ?? null, // Asegura que el valor sea string o null, nunca undefined
+  price: p.price.toNumber(), // Convierte el tipo Decimal a number
+  seller: p.seller, // Mantiene el objeto seller anidado
 });
 
 export async function fetchAllSellers(): Promise<SellerProfile[]> {
