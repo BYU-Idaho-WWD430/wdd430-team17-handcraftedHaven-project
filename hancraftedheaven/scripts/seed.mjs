@@ -57,12 +57,12 @@ async function seedSellerProfiles() {
 async function seedProducts() {
   console.log('Sembrando productos...');
   const products = [
-    { user_id: '7baf7cfb-84b9-47ba-b554-a146daefec3e', name: 'Wooden Bowl', price: 25.00, description: 'Hand-carved from native wood.', image: '/images/products/bowl.png', category: 'Kitchenware' },
-    { user_id: '7baf7cfb-84b9-47ba-b554-a146daefec3e', name: 'Wooden Cutting Board', price: 35.50, description: 'Durable and beautiful cutting board.', image: '/images/products/cutting-board.png', category: 'Kitchenware' },
-    { user_id: '0e2a45e8-7d06-4b89-8a5e-2790e2b79338', name: 'Ceramic Mug', price: 18.00, description: 'Perfect for your morning coffee.', image: '/images/products/mug.png', category: 'Pottery' },
-    { user_id: '0e2a45e8-7d06-4b89-8a5e-2790e2b79338', name: 'Decorative Vase', price: 42.00, description: 'A beautiful centerpiece for any room.', image: '/images/products/vase.png', category: 'Decor' },
-    { user_id: '7baf7cfb-84b9-47ba-b554-a146daefec3e', name: 'Handmade Wooden Spoon', price: 12.00, description: 'A rustic touch for your kitchen.', image: '/images/products/spoon.png', category: 'Kitchenware' },
-    { user_id: '0e2a45e8-7d06-4b89-8a5e-2790e2b79338', name: 'Small Ceramic Plate', price: 22.00, description: 'Ideal for desserts or appetizers.', image: '/images/products/plate.png', category: 'Pottery' },
+    { user_id: '7baf7cfb-84b9-47ba-b554-a146daefec3e', name: 'Hand-carved Wooden Bowl', price: 25.00, description: 'Hand-carved from native wood.', image: '/images/productos/madera/Hand-carved Wooden Bowl.png', category: 'Woodwork' },
+    { user_id: '7baf7cfb-84b9-47ba-b554-a146daefec3e', name: 'Beaded Earrings', price: 35.50, description: 'Durable and beautiful earrings.', image: '/images/productos/joyeria/Beaded Earrings.png', category: 'Jewelry' },
+    { user_id: '0e2a45e8-7d06-4b89-8a5e-2790e2b79338', name: 'Clay Coffee Mug', price: 18.00, description: 'Perfect for your morning coffee.', image: '/images/productos/alfarero/Clay Coffee Mug.png', category: 'Pottery' },
+    { user_id: '0e2a45e8-7d06-4b89-8a5e-2790e2b79338', name: 'Mini Clay Vase', price: 42.00, description: 'A beautiful centerpiece for any room.', image: '/images/productos/alfarero/Mini Clay Vase.png', category: 'Pottery' },
+    { user_id: '7baf7cfb-84b9-47ba-b554-a146daefec3e', name: 'Chilean Coastline', price: 12.00, description: 'A beautiful painting made with love', image: '/images/productos/pintura/Chilean Coastline.png', category: 'Painting' },
+    { user_id: '0e2a45e8-7d06-4b89-8a5e-2790e2b79338', name: 'Woven Table Runner', price: 22.00, description: 'Ideal for family tables that join kindness.', image: '/images/productos/telas/Woven Table Runner.png', category: 'Textiles' },
   ];
 
   for (const product of products) {
