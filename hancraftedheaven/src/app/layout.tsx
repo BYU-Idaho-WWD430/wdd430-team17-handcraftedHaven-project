@@ -7,8 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Handcrafted Haven",
-  description:
-    "Your curated marketplace for authentic, artisan-made creations.",
+  description: "Your curated marketplace for authentic, artisan-made creations.",
 };
 
 export default async function RootLayout({

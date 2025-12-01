@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="mt-10 py-10 bg-[#F4EDE4]">
+    <footer className="mt-10 py-10 bg-[#F4EDE4]">
       <div className="mb-5">
         <Link href={"/"} className="flex flex-row justify-center">
           <Image
@@ -25,6 +25,6 @@ export default function Footer() {
       <div className="flex flex-row justify-center gap-5">
         <NavLinks />
       </div>
-    </div>
+    </footer>
   );
 }
