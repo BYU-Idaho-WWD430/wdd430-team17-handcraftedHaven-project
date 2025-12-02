@@ -81,15 +81,20 @@ const mapProductToProductWithSeller = (
   category: p.category ?? null, // Asegura que el valor sea string o null, nunca undefined
 });
 
+const sellerWithUser = Prisma.validator<Prisma.SellerProfileDefaultArgs>()({
+  include: { user: { select: { firstname: true, lastname: true } } },
+});
+
+type SellerWithUserPayload = Prisma.SellerProfileGetPayload<typeof sellerWithUser>;
+
  export async function fetchAllSellers(): Promise<SellerProfile[]> {
   const sellers = await prisma.sellerProfile.findMany({
     include: { user: { select: { firstname: true, lastname: true } } },
     orderBy: [{ user: { firstname: "asc" } }, { user: { lastname: "asc" } }],
   });
-  // Mapeamos el resultado de Prisma al tipo SellerProfile que espera la aplicación.
-  // 's' es el objeto que viene de la base de datos, que no tiene firstname/lastname en la raíz.
-  // El objeto que retornamos SÍ los tiene, cumpliendo con el tipo SellerProfile.
-  return sellers.map((s) => ({
+  // Tipamos explícitamente el parámetro 's' para asegurar que TypeScript conozca su forma.
+  // Esto evita el error 'implicitly has an any type' si la inferencia falla.
+  return sellers.map((s: SellerWithUserPayload) => ({
     ...s,
     firstname: s.user.firstname ?? '', // Proporciona un string vacío si es null
     lastname: s.user.lastname ?? '',   // Proporciona un string vacío si es null
