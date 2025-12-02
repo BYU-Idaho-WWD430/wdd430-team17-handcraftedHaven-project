@@ -81,7 +81,7 @@ const mapProductToProductWithSeller = (
   category: p.category ?? null, // Asegura que el valor sea string o null, nunca undefined
 });
 
-export async function fetchAllSellers(): Promise<SellerProfile[]> {
+/* export async function fetchAllSellers(): Promise<SellerProfile[]> {
   const sellers = await prisma.sellerProfile.findMany({
     include: { user: { select: { firstname: true, lastname: true } } },
     orderBy: [{ user: { firstname: "asc" } }, { user: { lastname: "asc" } }],
@@ -97,7 +97,7 @@ export async function fetchAllSellers(): Promise<SellerProfile[]> {
     phone: s.phone ?? '',
     description: s.description ?? '',
   }));
-}
+} */
 
 export async function fetchSellerById(seller_id: string): Promise<SellerProfile | null> {
   const profile = await prisma.sellerProfile.findUnique({
