@@ -1,8 +1,22 @@
-Link for the Project Deployed: https://wdd430-team17-handcraftedhaven-proj-beta.vercel.app/
+# BYU-Idaho * Pathway World Wide
+## WDD 430 - Web Full-Stack Development 
+
+### Team Members
+
+•	Cherry Machado
+•	Ronaldo Campos
+•	Katherine Gonzales
+
+### Final Project: 🧺 Handcrafted Haven.
+
+ - This repository is our Final Project named "Handcrafted Haven" about a website to sell handcrafts or artesany.
+ 
+This is the link to see the project on line or deployment: 
+- https://wdd430-team17-handcraftedhaven-proj-beta.vercel.app/
+
+### Getting Started
 
 This is a Next.js project bootstrapped with create-next-app.
-
-Getting Started
 First, run the development server:
 
 npm run dev
