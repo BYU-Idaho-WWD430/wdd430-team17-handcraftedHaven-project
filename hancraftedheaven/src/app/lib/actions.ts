@@ -81,7 +81,7 @@ const mapProductToProductWithSeller = (
   category: p.category ?? null, // Asegura que el valor sea string o null, nunca undefined
 });
 
-/* export async function fetchAllSellers(): Promise<SellerProfile[]> {
+ export async function fetchAllSellers(): Promise<SellerProfile[]> {
   const sellers = await prisma.sellerProfile.findMany({
     include: { user: { select: { firstname: true, lastname: true } } },
     orderBy: [{ user: { firstname: "asc" } }, { user: { lastname: "asc" } }],
@@ -97,7 +97,7 @@ const mapProductToProductWithSeller = (
     phone: s.phone ?? '',
     description: s.description ?? '',
   }));
-} */
+} 
 
 export async function fetchSellerById(seller_id: string): Promise<SellerProfile | null> {
   const profile = await prisma.sellerProfile.findUnique({
@@ -189,7 +189,7 @@ export async function fetchFilteredProductsPaged(searchParams: { categories?: st
   return products.map(mapProductToProductWithSeller);
 }
 
-/* export async function fetchAllCategories(): Promise<{ category_id: string; category_name: string }[]> {
+ export async function fetchAllCategories(): Promise<{ category_id: string; category_name: string }[]> {
   const categories = await prisma.sellerProfile.findMany({
     select: { category: true },
     distinct: ["category"],
@@ -197,8 +197,8 @@ export async function fetchFilteredProductsPaged(searchParams: { categories?: st
   });
   return categories.map((c) => ({ category_id: c.category, category_name: c.category }));
 }
- */
-/* export async function fetchReviewsByProducts(product_id: string): Promise<Review[]> {
+ 
+ export async function fetchReviewsByProducts(product_id: string): Promise<Review[]> {
   const reviewsFromDb = await prisma.review.findMany({
     where: { product_id },
     include: { user: { select: { firstname: true, lastname: true, user_id: true } } },
@@ -211,7 +211,7 @@ export async function fetchFilteredProductsPaged(searchParams: { categories?: st
     created_at: r.created_at ?? new Date(), // Provide a default Date if created_at is null
     user: r.user,
   }));
-} */
+}
 
 export async function fetchProductStats(product_id: string) {
   try {
