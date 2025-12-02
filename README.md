@@ -1,3 +1,5 @@
+Link for the Project Deployed: https://wdd430-team17-handcraftedhaven-proj-beta.vercel.app/
+
 This is a Next.js project bootstrapped with create-next-app.
 
 Getting Started
